@@ -200,7 +200,6 @@ jobs:
     - name: Delete workflow runs
       uses: wooxi/delete-workflow-runs@main
       with:
-        node-version: ${{ matrix.node-version }} 
         retain_days: 1
         keep_minimum_runs: 10
         
@@ -210,7 +209,6 @@ jobs:
        
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        node-version: ${{ matrix.node-version }} 
         keep_latest: 12
         delete_tags: true
       env:
